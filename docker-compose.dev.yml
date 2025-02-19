@@ -1,0 +1,49 @@
+services:
+  frontend-dev:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "4200:4200"
+    command: sh -c "until [ -d node_modules ]; do sleep 1; done && npx nx serve awesome-front --host 0.0.0.0"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - install-deps
+
+  backend-dev:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "until [ -d node_modules ]; do sleep 1; done && npx nx serve awesome-backend --host 0.0.0.0"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - install-deps
+
+  install-deps:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: npm install
+
+  nginx-dev:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend-dev
+      - backend-dev
+
+volumes:
+  node_modules:

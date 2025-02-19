@@ -1,0 +1,79 @@
+.todo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .add-todo {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        input,
+        select {
+            padding: 0.5rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+        }
+    }
+
+    .todo-item {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+
+        &.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+
+        .todo-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .title {
+                flex: 1;
+            }
+
+            .priority {
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-size: 0.8rem;
+
+                &.urgent {
+                    background: #ff4444;
+                    color: white;
+                }
+
+                &.high {
+                    background: #ffaa33;
+                }
+
+                &.medium {
+                    background: #ffff44;
+                }
+
+                &.low {
+                    background: #44ff44;
+                }
+            }
+
+            .category {
+                background: #eee;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

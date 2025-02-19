@@ -1,1 +1,36 @@
-<p>Todo works!</p>
+<div class="todo-container">
+    <header>
+        <h1>Task Manager</h1>
+        <button (click)="toggleFocusMode()">
+            {{ focusMode ? 'Show All Tasks' : 'Focus Mode' }}
+        </button>
+    </header>
+
+    <div class="add-todo">
+        <input [(ngModel)]="newTodo.title" placeholder="What needs to be done?" (keyup.enter)="addTodo()" />
+        <select [(ngModel)]="newTodo.priority">
+            <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+        </select>
+        <select [(ngModel)]="newTodo.category">
+            <option value="">No Category</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+        </select>
+        <input type="date" [(ngModel)]="newTodo.dueDate" />
+        <button (click)="addTodo()">Add Task</button>
+    </div>
+
+    <div class="todos-list">
+        <div *ngFor="let todo of todos" class="todo-item" [class.completed]="todo.completed">
+            <div class="todo-content">
+                <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(todo)" />
+                <span class="title">{{todo.title}}</span>
+                <span class="priority" [class]="todo.priority">{{todo.priority}}</span>
+                <span *ngIf="todo.category" class="category">{{todo.category}}</span>
+                <span *ngIf="todo.dueDate" class="due-date">
+                    Due: {{todo.dueDate | date}}
+                </span>
+                <button (click)="deleteTodo(todo.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
