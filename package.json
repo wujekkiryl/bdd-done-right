@@ -1,8 +1,10 @@
 {
-  "name": "@./source",
+  "name": "ddd-done-right",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test:ui-components": "npx cucumber-js"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
@@ -28,6 +30,7 @@
     "@angular/cli": "~19.1.0",
     "@angular/compiler-cli": "~19.1.0",
     "@angular/language-service": "~19.1.0",
+    "@cucumber/cucumber": "^11.2.0",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
@@ -56,6 +59,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^1.6.2",
     "jest": "^29.7.0",
+    "jest-cucumber": "^4.5.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-environment-node": "^29.7.0",
     "jest-preset-angular": "~14.4.0",

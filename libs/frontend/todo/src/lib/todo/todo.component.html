@@ -22,7 +22,8 @@
     <div class="todos-list">
         <div *ngFor="let todo of todos" class="todo-item" [class.completed]="todo.completed">
             <div class="todo-content">
-                <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(todo)" />
+                <input type="checkbox" data-testid="checkbox-todo" [checked]="todo.completed"
+                    (change)="toggleComplete(todo)" />
                 <span class="title">{{todo.title}}</span>
                 <span class="priority" [class]="todo.priority">{{todo.priority}}</span>
                 <span *ngIf="todo.category" class="category">{{todo.category}}</span>
