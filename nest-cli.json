@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "todo": {
+      "type": "library",
+      "root": "libs/backend/todo",
+      "entryFile": "index",
+      "sourceRoot": "libs/backend/todo/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/backend/todo/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
