@@ -2,19 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { TaskPriority } from '../../../../backend/todo/src/todo.entity';
-
-interface Todo {
-  id: string;
-  title: string;
-  description?: string;
-  completed: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-  dueDate?: Date;
-  priority: TaskPriority;
-  category?: string;
-}
+import { Todo, TaskPriority } from '../types/todo.types';
 
 @Component({
   selector: 'front-todo',
