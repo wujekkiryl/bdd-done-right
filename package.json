@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test:ui-components": "npx cucumber-js"
+    "test:ui-component": "nx run todo:test"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "axios": "^1.6.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
+    "testcontainers": "^10.18.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -51,7 +52,7 @@
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.14",
     "@types/node": "18.16.9",
     "@typescript-eslint/utils": "^8.19.0",
     "angular-eslint": "^19.0.2",
