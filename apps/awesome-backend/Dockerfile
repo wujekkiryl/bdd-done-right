@@ -9,7 +9,7 @@ COPY . .
 RUN npm install
 
 # Build the app
-RUN npx nx build awesome-backend
+RUN npx nx build awesome-backend --port 3000 --host 0.0.0.0
 
 # Production stage
 FROM node:20-alpine

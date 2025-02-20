@@ -22,6 +22,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "testcontainers": "^10.18.0",
+    "uuid": "^11.1.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
